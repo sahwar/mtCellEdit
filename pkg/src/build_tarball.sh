@@ -9,7 +9,6 @@
 ./build_install.sh flush
 
 ./update_mtconf.sh
-./update_handbook.sh
 
 
 # On error exit
@@ -50,10 +49,6 @@ fi
 
 cd $PACKAGE
 CWD=$(pwd)
-
-# Update man pages with new version numbers
-cd pkg
-./update_man.sh
 
 # Clear any test data
 cd $CWD/test

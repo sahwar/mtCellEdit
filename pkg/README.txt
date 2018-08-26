@@ -100,7 +100,7 @@ Suse 42.3 XFCE [x86_64] (2017)
 ------------------------------
 
 Package deps:
-sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel
+sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel txt2tags
 
 * Install
 	./build_suse.sh all clean --conf "--libdir=/usr/lib64"
@@ -181,7 +181,7 @@ sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tag
 Lubuntu 14.04 (amd64) [x86_64] (2014)
 -------------------------------------
 
-sudo apt-get install bison flex automake libqt4-dev libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
+sudo apt-get install bison flex automake libqt4-dev libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev txt2tags
 
 Build AppImages:
 

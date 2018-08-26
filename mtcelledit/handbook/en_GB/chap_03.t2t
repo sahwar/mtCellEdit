@@ -13,6 +13,7 @@ In order to compile and run mtCellEdit you must have several packages already pr
 
 - A GNU toolchain (gcc, make, gawk, etc).
 - Qt version 5.
+- txt2tags.
 - Cairo (version 1.6 or later).
 - Pango (version 1.22 or later).
 

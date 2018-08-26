@@ -24,3 +24,5 @@ install:
 uninstall:
 
 clean:
+		rm *.html
+

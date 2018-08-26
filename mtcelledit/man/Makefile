@@ -25,3 +25,5 @@ uninstall:
 			do rm $$FILE.gz; done
 
 clean:
+		rm *.1
+
