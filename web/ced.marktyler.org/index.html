@@ -44,7 +44,7 @@ ul { padding-left: 20px; }
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
 <div class="w3-row w3-white w3-card-2 w3-center">
-<a href="#home" class="w3-bar-item w3-button">Home</a>
+<a href="" class="w3-bar-item w3-button">Home</a>
 <a href="#about" class="w3-bar-item w3-button w3-hide-medium w3-hide-small">About</a>
 <a href="#download" class="w3-bar-item w3-button w3-hide-small">Download</a>
 <a href="#extras" class="w3-bar-item w3-button">Extras</a>
@@ -55,11 +55,8 @@ ul { padding-left: 20px; }
 
 <!-- Header -->
 <!-- Home Section -->
-<header class="w3-display-container w3-content w3-padding-32" style="max-width:1200px;min-width:400px" id="home">
-<img class="w3-image" src="img/mt_banner.png" alt="Coloured Banner" width="750" height="750">
-<div class="w3-display-middle">
-<h1 class="w3-xxxlarge"><b>mtCellEdit</b></h1>
-</div>
+<header class="w3-display-container w3-content w3-padding-32">
+<img class="w3-image" src="img/mt_banner.png" alt="mtCellEdit">
 </header>
 
 
@@ -74,15 +71,15 @@ ul { padding-left: 20px; }
 
 <div class="w3-col m8 w3-padding-large">
 <h1 class="w3-center">About</h1><br>
-<p class="w3-large">
+<p>
 mtCellEdit is a lightweight spreadsheet program that I created from scratch. It is a small, no frills program which is designed to handle simple day to day spreadsheet tasks. I have put the most important facilities I want into a small customized program which means I can avoid the problems of larger programs such as slow operating speeds and overcomplicated user interfaces. The GUI is presented using Qt4, or Qt5 (whichever you prefer).
 </p>
 
-<p class="w3-large">
+<p>
 The core of the program is a shared C/C++ library which can be used by any C/C++ program to read, write and manipulate spreadsheets. The source code suite also contains other example programs that use this library, such as command line tools to allow scripts to access the API.
 </p>
 
-<p class="w3-large">
+<p>
 The default file format mtCellEdit uses is portable and transparent as it is a ZIP file containing TSV text files. I deliberately designed it this way so that data can be extracted and read by any modern spreadsheet program on any operating system without requiring mtCellEdit. Over the years I have been frustrated by binary and XML formats that make data only accessible via a single program (or by me wasting time manually converting each file, or by me writing a file format conversion program). This format ensures that my data never becomes stranded, and can be manipulated by whichever tool I choose for a particular job (i.e. spreadsheet programs, text editors, command line tools, etc).
 </p>
 
@@ -159,6 +156,11 @@ An interactive command line program for manipulating spreadsheets.  The function
 An interactive command line program for manipulating images.  The functions available are identical to mtPixy but accessed using a command line interface (via GNU readline).
 </p>
 
+<h2>mtDWCLI</h2>
+<p>
+An interactive command line program for creating high quality random data, managing one time pads, encrypting/decrypting files, and using steganography to store a file inside a PNG or FLAC file.
+</p>
+
 <h2>mtNetLog</h2>
 <p>
 A very basic command line network activity logger.
@@ -203,7 +205,7 @@ A command line program that creates files of random data (e.g. passwords, matric
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
 <p>
-<a href="#home" class="w3-bar-item w3-button"><b>mtCellEdit</b></a>
+<a href="" class="w3-bar-item w3-button"><b>mtCellEdit</b></a>
 by
 <a href="http://www.marktyler.org" class="w3-bar-item w3-button"
 target="_blank"><b>Mark Tyler</b></a>
