@@ -13,7 +13,7 @@ Package deps:
 sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtbase5-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
 
 * Install
-	./build_debian.sh all clean --preconf "LDFLAGS=-Wl,--as-needed" --conf "debug --libdir=/usr/lib/x86_64-linux-gnu"
+	./build_debian.sh --preconf "LDFLAGS=-Wl,--as-needed" --conf "debug --libdir=/usr/lib/x86_64-linux-gnu" all clean
 
 * Build using clang-static to expose possible errors:
 	./clang_scan.sh
@@ -87,7 +87,7 @@ Package deps:
 sudo yum install clang clang-analyzer valgrind txt2tags automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools qt5-qtbase-devel qtchooser qt-devel qt-config cairo-devel pango-devel libpng-devel libjpeg-turbo-devel giflib-devel libsqlite3x-devel libsndfile-devel
 
 * Install
-	./build_fedora.sh all clean --conf "--libdir=/usr/lib64"
+	./build_fedora.sh --conf "--libdir=/usr/lib64" all clean
 
 * Smoke test the apps.
 
@@ -103,7 +103,7 @@ Package deps:
 sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel txt2tags
 
 * Install
-	./build_suse.sh all clean --conf "--libdir=/usr/lib64"
+	./build_suse.sh --conf "--libdir=/usr/lib64" all clean
 
 * Smoke test the apps.
 
