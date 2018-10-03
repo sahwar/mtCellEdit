@@ -55,6 +55,20 @@ cd $CWD/test
 ./configure flush
 
 
+# Check for empty directories: git doesn't track these
+cd $CWD
+EMPTY=$(find . -type d -empty)
+if [ "$EMPTY" != "" ]
+then
+	echo
+	echo "Error! Empty directories found"
+	echo
+	echo $EMPTY
+
+	exit
+fi
+
+
 # Finally build the tarball
 cd $CWD/..
 chmod -R -77 $PACKAGE

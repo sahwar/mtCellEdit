@@ -5,9 +5,9 @@ This document outlines my testing procedures before this release.
 * Your system must satisfy all of the requirements outlined in section 3 of the handbook.
 
 
----------------------------------
-Debian 10 (amd64) [x86_64] (2018)
----------------------------------
+-------------------------------------
+Lubuntu 18.04 (amd64) [x86_64] (2018)
+-------------------------------------
 
 Package deps:
 sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtbase5-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev

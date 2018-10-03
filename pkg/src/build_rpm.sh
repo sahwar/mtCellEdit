@@ -7,7 +7,7 @@ MT_flush_func()
 {
 	cd $CWD
 
-	rm -rf $DISTRO_PATH/tmp/*/*
+	rm -rf $DISTRO_PATH/tmp
 }
 
 
@@ -16,6 +16,7 @@ MT_build_app_func()
 	# Exit on error
 	set -e
 
+	mkdir -p $CWD/$DISTRO_PATH/tmp/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 
 	SPECFILE=$CWD/$DISTRO_PATH/tmp/SPECS/$PKG.spec
 
