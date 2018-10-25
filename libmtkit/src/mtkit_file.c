@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2008-2017 Mark Tyler
+	Copyright (C) 2008-2018 Mark Tyler
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -358,9 +358,20 @@ int mtkit_file_readable (
 	char	const *	const	filename
 	)
 {
-	if ( filename && 0 == access ( filename, R_OK ) )
+	if (	filename			&&
+		0 == access ( filename, F_OK )	&&
+		0 == access ( filename, R_OK )
+		)
 	{
-		return 1;
+		struct stat buf;
+		if (	lstat ( filename, &buf )	||
+			S_ISDIR ( buf.st_mode )
+			)
+		{
+			return 0;	// NOT a file
+		}
+
+		return 1;	// Exists, is file, and readable
 	}
 
 	return 0;

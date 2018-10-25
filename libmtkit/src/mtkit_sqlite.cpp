@@ -207,6 +207,9 @@ private:
 	size_t			m_size;
 	size_t			m_array_tot;	// Allocated items in m_array
 	T		**	m_array;
+
+	ArrayList ( const ArrayList & );	// Disable copy constructor
+	ArrayList & operator = (const ArrayList &);	// Disable = operator
 };
 
 

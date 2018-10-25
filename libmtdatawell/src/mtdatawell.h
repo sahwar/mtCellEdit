@@ -108,7 +108,8 @@ public:
 	WellOp * const op;
 
 private:
-	Well ( const Well & );		// Disable copy constructor
+	Well ( const Well & );			// Disable copy constructor
+	Well & operator = (const Well &);	// Disable = operator
 };
 
 
@@ -158,7 +159,8 @@ public:
 	ButtOp * const op;
 
 private:
-	Butt ( const Butt & );		// Disable copy constructor
+	Butt ( const Butt & );			// Disable copy constructor
+	Butt & operator = (const Butt &);	// Disable = operator
 };
 
 
@@ -205,7 +207,8 @@ public:
 	SodaOp * const op;
 
 private:
-	Soda ( const Soda & );		// Disable copy constructor
+	Soda ( const Soda & );			// Disable copy constructor
+	Soda & operator = (const Soda &);	// Disable = operator
 };
 
 
@@ -242,7 +245,8 @@ public:
 	TapOp * const op;
 
 private:
-	Tap ( const Tap & );		// Disable copy constructor
+	Tap ( const Tap & );			// Disable copy constructor
+	Tap & operator = (const Tap &);		// Disable = operator
 };
 
 
@@ -298,7 +302,8 @@ public:
 	TapFileOp * const op;
 
 private:
-	TapFile ( const TapFile & );	// Disable copy constructor
+	TapFile ( const TapFile & );		// Disable copy constructor
+	TapFile & operator = (const TapFile &);	// Disable = operator
 };
 
 

@@ -31,5 +31,5 @@ uninstall:
 			do rm $$FILE.gz; done
 
 clean:
-		rm *.1
+		rm -f *.1
 

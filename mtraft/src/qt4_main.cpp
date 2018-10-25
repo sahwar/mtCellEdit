@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2013-2017 Mark Tyler
+	Copyright (C) 2013-2018 Mark Tyler
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -50,6 +50,7 @@ MainWindow::MainWindow ()
 
 	m_progress = new QProgressBar;
 	m_progress->setMinimum ( 0 );
+	m_progress->setTextVisible ( false );
 
 	m_button_copy = new QPushButton ( "Copy To Clipboard" );
 	m_button_copy->setShortcut ( Qt::CTRL + Qt::Key_C );

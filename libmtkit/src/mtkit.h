@@ -1443,12 +1443,12 @@ public:
 
 	int init_prefs ( mtKit::Prefs * pr );
 
-	char const * get_filename ( int idx );
-	void set_filename ( char const * name );
+	char const * get_filename ( int idx ) const;
+	void set_filename ( char const * name ) const;
 
 private:
-	void set_filename_idx ( int idx, char const * name );
-	char * create_key ( int idx );
+	void set_filename_idx ( int idx, char const * name ) const;
+	char * create_key ( int idx ) const;
 
 /// ----------------------------------------------------------------------------
 
@@ -1789,6 +1789,10 @@ public:
 	size_t		array_len;
 	size_t		tot;		// Current items in array
 	size_t		pos;		// Current position in array
+
+private:
+	ByteBuf ( const ByteBuf & );		// Disable copy constructor
+	ByteBuf & operator = (const ByteBuf &);	// Disable = operator
 };
 
 
@@ -1873,6 +1877,8 @@ private:
 	SqliteAddRecordOp * const op;
 
 	SqliteAddRecord ( const SqliteAddRecord & ); // Disable copy constructor
+	SqliteAddRecord & operator = (const SqliteAddRecord &);
+		// Disable = operator
 };
 
 

@@ -629,7 +629,8 @@ public:
 protected:
 	void set_style ();
 
-	Font ( const Font & );		// Disable copy constructor
+	Font ( const Font & );			// Disable copy constructor
+	Font & operator = (const Font &);	// Disable = operator
 
 /// ----------------------------------------------------------------------------
 

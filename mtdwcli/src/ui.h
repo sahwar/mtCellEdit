@@ -47,10 +47,10 @@ public:
 
 	int get_help ( char const * const * argv ) const;
 
-	inline mtDW::Well * get_well () { return m_well.get (); }
-	inline mtDW::Butt * get_butt () { return m_butt.get (); }
-	inline mtDW::Soda * get_soda () { return m_soda.get (); }
-	inline mtDW::Tap * get_tap () { return m_tap.get (); }
+	inline mtDW::Well * get_well () const { return m_well.get (); }
+	inline mtDW::Butt * get_butt () const { return m_butt.get (); }
+	inline mtDW::Soda * get_soda () const { return m_soda.get (); }
+	inline mtDW::Tap * get_tap () const { return m_tap.get (); }
 
 /// ----------------------------------------------------------------------------
 
