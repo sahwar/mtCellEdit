@@ -22,3 +22,4 @@ install:
 uninstall:
 
 clean:
+		rm -rf *.png

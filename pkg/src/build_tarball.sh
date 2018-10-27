@@ -54,7 +54,6 @@ CWD=$(pwd)
 cd $CWD/test
 ./configure flush
 
-
 # Check for empty directories: git doesn't track these
 cd $CWD
 EMPTY=$(find . -type d -empty)

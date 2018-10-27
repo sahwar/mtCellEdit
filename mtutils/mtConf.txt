@@ -146,6 +146,8 @@ MTCF_PARSE_ARG1()
 			BIN_SUFFIX="-qt5"
 			;;
 
+	"" )		;;
+
 	* )		echo ERROR - Unknown command \"$A\"
 			exit 1
 			;;

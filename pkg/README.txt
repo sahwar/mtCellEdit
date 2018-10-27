@@ -10,10 +10,10 @@ Lubuntu 18.04 (amd64) [x86_64] (2018)
 -------------------------------------
 
 Package deps:
-sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtbase5-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
+sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtbase5-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev inkscape
 
 * Install
-	./build_debian.sh --preconf "LDFLAGS=-Wl,--as-needed" --conf "debug --libdir=/usr/lib/x86_64-linux-gnu" all clean
+	./build_debian.sh --preconf "LDFLAGS=-Wl,--as-needed" --conf "debug --libdir=/usr/lib/x86_64-linux-gnu" clean all
 
 * Build using clang-static to expose possible errors:
 	./clang_scan.sh
@@ -49,7 +49,7 @@ sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex 
 * Skim documentation to expose cruft and mistakes.
 
 * Remove
-	./build_debian.sh remove all clean
+	./build_debian.sh remove clean all
 
 * Install, test, uninstall locally:
 	DIR="$HOME/test/usr"; ./build_local.sh --preconf "LDFLAGS=-Wl,-rpath=$DIR/lib" --conf "--disable-man --prefix=$DIR"
@@ -67,15 +67,15 @@ ArcoLinux 6.9.1 [x86_64] (2018)
 -------------------------------
 
 Package deps:
-sudo pacman -S base-devel txt2tags qt5-base qt4 clang-analyzer time valgrind cppcheck libpng giflib libjpeg sqlite libsndfile
+sudo pacman -S base-devel txt2tags qt5-base qt4 clang-analyzer time valgrind cppcheck libpng giflib libjpeg sqlite libsndfile inkscape
 
 * Install
-	./build_arch.sh all clean
+	./build_arch.sh clean all
 
 * Smoke test the apps.
 
 * Remove
-	./build_arch.sh remove all clean
+	./build_arch.sh remove clean all
 
 
 -------------------------------
@@ -84,15 +84,15 @@ Fedora  28 XFCE [x86_64] (2018)
 -------------------------------
 
 Package deps:
-sudo yum install clang clang-analyzer valgrind txt2tags automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools qt5-qtbase-devel qtchooser qt-devel qt-config cairo-devel pango-devel libpng-devel libjpeg-turbo-devel giflib-devel libsqlite3x-devel libsndfile-devel
+sudo yum install clang clang-analyzer valgrind txt2tags automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools qt5-qtbase-devel qtchooser qt-devel qt-config cairo-devel pango-devel libpng-devel libjpeg-turbo-devel giflib-devel libsqlite3x-devel libsndfile-devel inkscape
 
 * Install
-	./build_fedora.sh --conf "--libdir=/usr/lib64" all clean
+	./build_fedora.sh --conf "--libdir=/usr/lib64" clean all
 
 * Smoke test the apps.
 
 * Remove
-	./build_fedora.sh remove all clean
+	./build_fedora.sh remove clean all
 
 
 ------------------------------
@@ -100,15 +100,15 @@ Suse 42.3 XFCE [x86_64] (2017)
 ------------------------------
 
 Package deps:
-sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel txt2tags
+sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel txt2tags inkscape
 
 * Install
-	./build_suse.sh --conf "--libdir=/usr/lib64" all clean
+	./build_suse.sh --conf "--libdir=/usr/lib64" clean all
 
 * Smoke test the apps.
 
 * Remove
-	./build_suse.sh remove all clean
+	./build_suse.sh remove clean all
 
 
 -----------------------------------------
@@ -116,7 +116,7 @@ Debian 7 (i386 256MB RAM) [x86_32] (2013)
 -----------------------------------------
 
 Package deps:
-sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
+sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev inkscape
 
 * Install
 	./build_debian.sh clean --bcfile etc/bcfile_debian7_i386.txt
@@ -139,7 +139,7 @@ Debian 7 (armhf vexpress-a9 256MB RAM) [ARM_32] (2013)
 ------------------------------------------------------
 
 Package deps:
-sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
+sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev inkscape
 
 * Install
 	./build_install.sh --bcfile etc/bcfile_debian7_arm.txt
@@ -161,7 +161,7 @@ Debian 7 (powerpc 256MB RAM) [PPC_32] (2013)
 --------------------------------------------
 
 Package deps:
-sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev
+sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tags automake libreadline-dev libqt4-dev qtcreator qt4-qtconfig time libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev inkscape
 
 * Install
 	./build_install.sh --bcfile etc/bcfile_debian7_ppc.txt
@@ -181,7 +181,7 @@ sudo apt-get install dh-make pbuilder clang valgrind bison flex cppcheck txt2tag
 Lubuntu 14.04 (amd64) [x86_64] (2014)
 -------------------------------------
 
-sudo apt-get install bison flex automake libqt4-dev libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev txt2tags
+sudo apt-get install bison flex automake libqt4-dev libpango1.0-dev libpng-dev libgif-dev libjpeg-dev libsqlite3-dev libsndfile1-dev txt2tags inkscape
 
 Build AppImages:
 

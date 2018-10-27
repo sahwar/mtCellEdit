@@ -9,7 +9,7 @@ MTDESK		= $(BIN_NAME).desktop
 
 all:		$(MTDESK)
 
-$(MTDESK):	mtraft.desktop.txt
+$(MTDESK):	mtraft.desktop.txt svg.svg
 		./builddesktop.sh "mtraft.desktop.txt" "$(BIN_INSTALL)" "$(BIN_NAME)" "$(APP_NAME)" "$(BIN_SUFFIX)" > $(MTDESK)
 
 install:
@@ -34,4 +34,4 @@ uninstall:
 		rm $(ICONDIR)/*/apps/$(BIN_NAME).svg
 
 clean:
-		rm -rf *.desktop
+		rm -rf *.desktop *.png

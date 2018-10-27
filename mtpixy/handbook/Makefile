@@ -6,7 +6,10 @@ MAKE_DIRS	= en_GB
 
 .PHONY:		$(MAKE_DIRS) all install uninstall clean
 
-all clean:
+
+all:
+		mkdir -p img
+		cp ../desktop/svg.svg img
 		set -e; for dir in $(MAKE_DIRS); do $(MAKE) -C $$dir $@; done
 
 install:
@@ -18,3 +21,7 @@ install:
 
 uninstall:
 		rm -rf $(INSTALL_DIR)
+
+clean:
+		rm -rf img
+		set -e; for dir in $(MAKE_DIRS); do $(MAKE) -C $$dir $@; done

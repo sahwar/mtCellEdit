@@ -22,7 +22,7 @@ MT_PARSE_ARGS libmtkit libmtpixy libmtqex4
 
 case "$1" in
 "mtcelledit"* )	MT_PARSE_ARGS libmtcelledit libmtcedui mtcelledit-qt4;;
-"mtpixy"* )	MT_PARSE_ARGS libmtpixyui mtpixy-qt4;;
+"mtpixy"* )	MT_PARSE_ARGS mtpixy-qt4;;
 "mtraft"* )	MT_PARSE_ARGS libmtcelledit mtraft-qt4;;
 * )
 	echo

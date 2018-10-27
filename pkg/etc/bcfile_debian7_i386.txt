@@ -2,7 +2,6 @@ libmtkit	./configure debugold --libdir=/usr/lib/i386-linux-gnu
 libmtcelledit	./configure debugold --libdir=/usr/lib/i386-linux-gnu
 libmtpixy	./configure debugold --libdir=/usr/lib/i386-linux-gnu
 libmtcedui	./configure debugold --libdir=/usr/lib/i386-linux-gnu
-libmtpixyui	./configure debugold --libdir=/usr/lib/i386-linux-gnu
 mtutils	./configure debugold
 mtcedutils	./configure debugold
 mtcedcli	./configure debugold

@@ -1,11 +1,14 @@
 The mtPixy Handbook
 
 
+%!postproc(html): 'svg.png"' 'svg.svg" width="256"'
+
+
 
  | **By Mark Tyler**
 
  | 
- | [[../img/mtpixy_icon_256.png] chap_00.html]
+ | [[../img/svg.png] chap_00.html]
 
  | 
  | **Edition 3.2**

@@ -3,6 +3,14 @@ include		../_conf.txt
 LIB_SONAME	= $(LIB_NAME).1
 HEADER		= mtpixy.h
 OBJS		=			\
+		pui_clipboard.o		\
+		pui_effects.o		\
+		pui_file.o		\
+		pui_mask.o		\
+		pui_palette.o		\
+		pui_render.o		\
+		pui_tool.o		\
+		pui_undo.o		\
 		px_blit.o		\
 		px_brush.o		\
 		px_convert.o		\

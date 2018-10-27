@@ -9,7 +9,7 @@ MTDESKXML	= $(BIN_NAME).xml
 
 all:		$(MTDESK) $(MTDESKXML)
 
-$(MTDESK):	desktop.txt
+$(MTDESK):	desktop.txt svg.svg
 		./builddesktop.sh "desktop.txt" "$(BIN_INSTALL)" "$(BIN_NAME)" "$(APP_NAME)" "$(BIN_SUFFIX)" > $(MTDESK)
 
 $(MTDESKXML):	mime.xml.txt
@@ -54,4 +54,4 @@ uninstall:
 		rm $(ICONDIR)/*/mimetypes/application-x-$(BIN_NAME).svg
 
 clean:
-		rm -rf *.desktop *.xml
+		rm -rf *.desktop *.xml *.png
