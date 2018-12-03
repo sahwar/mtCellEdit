@@ -47,8 +47,9 @@ rm -rf $APPDIR
 PRECONF="CFLAGS=\"-I$APPDIR/usr/include -O1 -std=gnu11\""
 PRECONF="$PRECONF CXXFLAGS=\"-I$APPDIR/usr/include -O1 -std=gnu++11\""
 PRECONF="$PRECONF LDFLAGS=\"-L$APPDIR/usr/lib -Wl,--as-needed\""
+PRECONF="$PRECONF APPIMAGE_PREFIX=\"../..\""
 
-CONF="$CONF --disable-man --disable-handbook"
+CONF="$CONF --disable-man"
 
 DESTDIR="$APPDIR"
 

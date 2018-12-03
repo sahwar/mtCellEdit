@@ -16,6 +16,46 @@ set -e
 
 cd ..
 CWD=$(pwd)
+
+
+CHECK_EMPTY()
+{
+	# Check for empty directories: git doesn't track these
+	cd $CWD
+	EMPTY=$(find . -type d -empty)
+	if [ "$EMPTY" != "" ]
+	then
+		echo
+		echo "Error! Empty directories found"
+		echo
+		echo $EMPTY
+
+		exit
+	fi
+}
+
+CHECK_HIDDEN()
+{
+	# Check for hidden files & directories
+	cd $CWD
+	HIDDEN_FILES=$(find . -type f -iname ".*")
+	HIDDEN_DIRS=$(find . -type d -iname ".*")
+	if [ "$HIDDEN_FILES$HIDDEN_DIRS" != "." ]
+	then
+		echo
+		echo "Error! Hidden files & directories found"
+		echo
+		echo $HIDDEN_FILES
+		echo $HIDDEN_DIRS
+
+		exit
+	fi
+}
+
+CHECK_EMPTY
+CHECK_HIDDEN
+
+cd $CWD
 PACKAGE=$(basename $CWD)
 
 echo $PACKAGE
@@ -54,19 +94,9 @@ CWD=$(pwd)
 cd $CWD/test
 ./configure flush
 
-# Check for empty directories: git doesn't track these
-cd $CWD
-EMPTY=$(find . -type d -empty)
-if [ "$EMPTY" != "" ]
-then
-	echo
-	echo "Error! Empty directories found"
-	echo
-	echo $EMPTY
-
-	exit
-fi
-
+# Final checks
+CHECK_EMPTY
+CHECK_HIDDEN
 
 # Finally build the tarball
 cd $CWD/..

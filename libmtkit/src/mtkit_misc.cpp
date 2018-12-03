@@ -19,6 +19,46 @@
 
 
 
+void mtKit::get_binary_dir ( std::string & path )
+{
+	path = "";
+
+	char dest[PATH_MAX] = {0};
+
+	if ( -1 == readlink ( "/proc/self/exe", dest, sizeof(dest) ) )
+	{
+		return;
+	}
+
+	char * ch = strrchr ( dest, MTKIT_DIR_SEP );
+	if ( ch )
+	{
+		// Extract path, lose binary name
+		ch[1] = 0;
+		path += dest;
+	}
+	else
+	{
+		// No MTKIT_DIR_SEP separator so no path
+	}
+}
+
+void mtKit::get_data_dir (
+	std::string		& path,
+	char	const * const	data
+	)
+{
+	path = "";
+
+	if ( data && data[0] == '.' )
+	{
+		// Relative path is being used so get binary path as a base
+		get_binary_dir ( path );
+	}
+
+	path += data;
+}
+
 std::string mtKit::realpath ( std::string const & path )
 {
 	std::string res;

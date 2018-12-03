@@ -358,13 +358,20 @@ int mtkit_file_readable (
 	char	const *	const	filename
 	)
 {
-	if (	filename			&&
-		0 == access ( filename, F_OK )	&&
-		0 == access ( filename, R_OK )
+	char path[ PATH_MAX ];
+
+	// Don't count symlinks as a file, they could be for directories.
+	if ( ! filename || ! realpath ( filename, path ) )
+	{
+		return 0;	// NOT a file
+	}
+
+	if (	0 == access ( path, F_OK )	&&
+		0 == access ( path, R_OK )
 		)
 	{
 		struct stat buf;
-		if (	lstat ( filename, &buf )	||
+		if (	lstat ( path, &buf )	||
 			S_ISDIR ( buf.st_mode )
 			)
 		{

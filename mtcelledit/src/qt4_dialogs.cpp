@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2013-2017 Mark Tyler
+	Copyright (C) 2013-2018 Mark Tyler
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -60,11 +60,7 @@ void MainWindow::pressOptionsFullScreen ()
 
 void MainWindow::pressOptionsHelp ()
 {
-	char	const	* program;
-	char	const	* html;
-
-
-	program = pprfs->getString ( GUI_INIFILE_HELP_BROWSER );
+	char const * program = pprfs->getString ( GUI_INIFILE_HELP_BROWSER );
 
 	if ( ! program[0] )
 	{
@@ -76,7 +72,9 @@ void MainWindow::pressOptionsHelp ()
 		program = "firefox";
 	}
 
-	html = pprfs->getString ( GUI_INIFILE_HELP_FILE );
+	std::string path;
+	mtKit::get_data_dir ( path, pprfs->getString ( GUI_INIFILE_HELP_FILE ));
+	char const * const html = path.c_str ();
 
 	if ( ! mtkit_file_readable ( html ) )
 	{

@@ -7,10 +7,8 @@ wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous
 chmod a+x linuxdeployqt*.AppImage
 
 
-MODULES="mtcelledit-qt4"
 
-
-for PKG in $MODULES
+for PKG in "mtcelledit-qt4" "mtpixy-qt4" "mtraft-qt4"
 do
 	echo	./build_appimage.sh $PKG
 		./build_appimage.sh $PKG

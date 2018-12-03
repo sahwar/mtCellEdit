@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2013-2017 Mark Tyler
+	Copyright (C) 2013-2018 Mark Tyler
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -16,7 +16,6 @@
 */
 
 #include "qt4.h"
-#include "icon.xpm"
 
 
 
@@ -289,7 +288,11 @@ MainWindow::MainWindow (
 	// Widgets
 
 	setWindowTitle ( VERSION );
-	setWindowIcon ( QPixmap ( icon_xpm ) );
+
+	std::string path;
+	mtKit::get_data_dir ( path, DATA_INSTALL "/icons/hicolor/256x256/apps/"
+		BIN_NAME ".png" );
+	setWindowIcon ( QIcon ( path.c_str () ) );
 
 	QVBoxLayout * layv = new QVBoxLayout ( this );
 	layv->setMargin ( 0 );

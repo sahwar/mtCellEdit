@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="48" height="48" version="1.0" xmlns="http://www.w3.org/2000/svg">
-	<g>
-		<rect width="48" height="48" fill="#0080ff"/>
-		<path d="m4 20 20-10 20 10-20 10z" fill="#c0c000"/>
-		<path d="m24 30 20-10v6l-20 10z" fill="#ff0"/>
-		<path d="m24 30-20-10v6l20 10z" fill="#808000"/>
-	</g>
-	<g fill="none" stroke="#000" stroke-width="1px">
-		<path d="m24 10 20 10v6l-20 10-20-10v-6z"/>
-		<path d="m24 30 20-10"/>
-		<path d="m24 30-20-10"/>
-		<path d="m24 30v6"/>
-	</g>
+	<circle cx="24" cy="24" r="24" fill="#007070"/>
+	<path d="m7 21 17-7 17 7-17 9z" fill="#d0d000"/>
+	<path d="m24 28-17-7v5l17 7z" fill="#b0b000"/>
+	<path d="m24 28 17-7v5l-17 7z" fill="#f0f000"/>
 </svg>

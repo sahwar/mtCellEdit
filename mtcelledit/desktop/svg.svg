@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="48" height="48" version="1.0" xmlns="http://www.w3.org/2000/svg">
-	<rect width="48" height="48"/>
-	<rect x="3" y="3" width="42" height="42" fill="#6d92db"/>
-	<path d="m12 12h24v24h-24v-7.5l4.5-4.5-4.5-4.5z"/>
+	<circle cx="24" cy="24" r="24" fill="#004992"/>
 	<path d="m33 21v-6h-18v3l6 6-6 6v3h18v-6h-3v3h-10.5l6-6-6-6h10.5v3z" fill="#fff"/>
 </svg>

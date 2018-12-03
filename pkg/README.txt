@@ -53,18 +53,20 @@ sudo apt-get install dh-make pbuilder clang clang-tools-6.0 valgrind bison flex 
 
 * Install, test, uninstall locally:
 	DIR="$HOME/test/usr"; ./build_local.sh --preconf "LDFLAGS=-Wl,-rpath=$DIR/lib" --conf "--disable-man --prefix=$DIR"
+	DIR="$HOME/test/usr"; ./build_local.sh --preconf "LDFLAGS=-Wl,-rpath=$DIR/lib" --conf "--disable-man --prefix=$DIR" mtraft-qt5 mtpixy-qt5
 	./build_local.sh flush
 	DIR="$HOME/test/usr"; ./build_local.sh --preconf "LDFLAGS=-Wl,-rpath=$DIR/lib" --conf "--use-qt4 --disable-man --prefix=$DIR" libmtqex4 mtcelledit-qt4 mtraft-qt4 mtpixy-qt4
 	./build_local.sh flush
 
 	DIR="$HOME/test/usr"; ./build_local.sh --conf "--use-qt4 --disable-man --prefix=$DIR" remove libmtqex4 mtcelledit-qt4 mtraft-qt4 mtpixy-qt4
 	./build_local.sh flush
+	DIR="$HOME/test/usr"; ./build_local.sh --conf "--disable-man --prefix=$DIR" remove mtraft-qt4 mtpixy-qt4
 	DIR="$HOME/test/usr"; ./build_local.sh --conf "--disable-man --prefix=$DIR" remove
 	./build_local.sh flush
 
--------------------------------
-ArcoLinux 6.9.1 [x86_64] (2018)
--------------------------------
+---------------------------------
+ArcoLinux 18.10.4 [x86_64] (2018)
+---------------------------------
 
 Package deps:
 sudo pacman -S base-devel txt2tags qt5-base qt4 clang-analyzer time valgrind cppcheck libpng giflib libjpeg sqlite libsndfile inkscape
@@ -80,7 +82,7 @@ sudo pacman -S base-devel txt2tags qt5-base qt4 clang-analyzer time valgrind cpp
 
 -------------------------------
 CentOS 7.4 XFCE [x86_64] (2017)
-Fedora  28 XFCE [x86_64] (2018)
+Fedora  29 XFCE [x86_64] (2018)
 -------------------------------
 
 Package deps:
@@ -95,12 +97,28 @@ sudo yum install clang clang-analyzer valgrind txt2tags automake gcc gcc-c++ bis
 	./build_fedora.sh remove clean all
 
 
-------------------------------
-Suse 42.3 XFCE [x86_64] (2017)
-------------------------------
+----------------------------------
+openSUSE 42.3 XFCE [x86_64] (2017)
+----------------------------------
 
 Package deps:
 sudo zypper install automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng-devel libjpeg62-devel giflib-devel sqlite3-devel libsndfile-devel txt2tags inkscape
+
+* Install
+	./build_suse.sh --conf "--libdir=/usr/lib64" clean all
+
+* Smoke test the apps.
+
+* Remove
+	./build_suse.sh remove clean all
+
+
+----------------------------------
+openSUSE 15.0 XFCE [x86_64] (2018)
+----------------------------------
+
+Package deps:
+sudo zypper install rpm-build automake gcc gcc-c++ bison flex cppcheck readline-devel rpmdevtools libqt5-qtbase-devel qt-devel cairo-devel pango-devel libpng16-16 libpng-devel libjpeg62-devel libgif7 giflib-devel sqlite3-devel libsndfile-devel txt2tags inkscape
 
 * Install
 	./build_suse.sh --conf "--libdir=/usr/lib64" clean all

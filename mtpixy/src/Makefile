@@ -1,11 +1,11 @@
 include		../_conf.txt
 
-OBJS		=		\
+OBJS_BE		=		\
 		be_cline.o	\
 		be_main.o	\
 		be_prefs.o	\
 
-OBJS_QT4	= $(OBJS)		\
+OBJS_QT4	= $(OBJS_BE)		\
 		moc_qt4.o		\
 		qt4_canvas.o		\
 		qt4_d_brush.o		\
@@ -38,18 +38,20 @@ OBJS_QT5	= $(OBJS_QT4)
 all:		$(BIN_NAME)
 
 mtpixy-qt4:	$(OBJS_QT4)
-		$(CXX) $(OBJS_QT4) -o $@ $(LDFLAGS)
+		$(CXX) $^ -o $@ $(LDFLAGS)
 
 mtpixy-qt5:	$(OBJS_QT5)
-		$(CXX) $(OBJS_QT5) -o $@ $(LDFLAGS)
+		$(CXX) $^ -o $@ $(LDFLAGS)
 
-$(OBJS_QT4) $(OBJS_QT5):	*.h
+$(OBJS_QT4):	*.h
+
+$(OBJS_QT5):	*.h
 
 # .c.o Implicit rule
 # .cpp.o Implicit rule
 
-moc_qt4.cpp:	qt4.h
-		$(MOC) qt4.h -o $@
+moc_%.cpp:	%.h
+		$(MOC) $< -o $@
 
 install:
 		install -d $(DESTDIR)$(BIN_INSTALL)

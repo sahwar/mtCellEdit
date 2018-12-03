@@ -16,7 +16,6 @@
 */
 
 #include "qt4.h"
-#include "icon_xpm.xpm"
 
 
 
@@ -28,7 +27,11 @@ MainWindow::MainWindow ()
 	m_table		()
 {
 	setWindowTitle ( VERSION );
-	setWindowIcon ( QPixmap ( icon_xpm ) );
+
+	std::string path;
+	mtKit::get_data_dir ( path, DATA_INSTALL "/icons/hicolor/256x256/apps/"
+		BIN_NAME ".png" );
+	setWindowIcon ( QIcon ( path.c_str () ) );
 
 	QWidget * widget = new QWidget;
 	setCentralWidget ( widget );

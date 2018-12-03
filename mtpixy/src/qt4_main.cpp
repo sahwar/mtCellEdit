@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2016-2017 Mark Tyler
+	Copyright (C) 2016-2018 Mark Tyler
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -35,6 +35,11 @@ Mainwindow::Mainwindow (
 	m_view_mode_flags 	( 0 )
 {
 	setEnabled ( false );
+
+	std::string path;
+	mtKit::get_data_dir ( path, DATA_INSTALL "/icons/hicolor/256x256/apps/"
+		BIN_NAME ".png" );
+	setWindowIcon ( QIcon ( path.c_str () ) );
 
 
 	mtPixy::Image	* im_screenshot = NULL;

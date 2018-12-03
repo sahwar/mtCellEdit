@@ -11,6 +11,7 @@ OBJS		=		\
 		10.png		\
 
 .PHONY:		all install uninstall clean
+.NOTPARALLEL:
 
 all:		$(OBJS)
 

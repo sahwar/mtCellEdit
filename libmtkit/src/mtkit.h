@@ -1250,6 +1250,12 @@ void mtkit_int32_pack (			// Pack integer into little endian
 namespace mtKit
 {
 
+void get_binary_dir ( std::string & path );
+	// After function, path = "" or "/some/dir/to/binary/"
+
+void get_data_dir ( std::string & path, char const * data );
+	// If data[0]='.' path=/binary/dir/data, else path=data
+
 std::string realpath ( std::string const & path );
 
 int string_from_data (

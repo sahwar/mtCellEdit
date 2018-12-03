@@ -1,3 +1,7 @@
+3.3	2019-FIXME
+
+	* App icon slightly changed to be simpler and cleaner.
+
 3.1	2018-2-25
 
 	* Copying to clipboard now copies numbers without commas.
