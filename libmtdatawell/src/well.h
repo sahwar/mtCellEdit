@@ -118,6 +118,8 @@ public:
 	FileDB			m_file_db;
 
 private:
+	mtKit::FileLock		m_lock;
+
 	std::string		m_path;
 
 	mtKit::Prefs		m_prefs;

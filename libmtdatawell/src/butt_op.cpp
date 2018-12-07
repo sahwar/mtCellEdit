@@ -49,6 +49,13 @@ mtDW::ButtOp::ButtOp (
 	m_random	( random ),
 	m_read_bucket	( 0 )
 {
+	std::string const lock_filename = m_path + "butt.lock";
+
+	if ( m_lock.set ( lock_filename ) )
+	{
+		throw 123;
+	}
+
 	mkdir ( m_butt_root.c_str(), S_IRWXU | S_IRWXG | S_IRWXO );
 
 	// Global Prefs files --------------------------------------------------

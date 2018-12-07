@@ -468,19 +468,28 @@ int mtkit_file_get_mem (
 	int64_t		* buf_len	// Put buffer length here (NULL = don't)
 	);
 
-int mtkit_file_header_gz (			// Is this a .gz file header?
-	unsigned char	const	* mem,		// 31, 139
-	int			mem_size	// > 20
+int mtkit_file_header_gz (		// Is this a .gz file header?
+	unsigned char	const	* mem,	// 31, 139
+	int			mem_size// > 20
 	);
 	// 0 = No
 	// 1 = Yes
 
-int mtkit_file_header_zip (			// Is this a .zip file header?
-	unsigned char	const	* mem,		// 0x50, 0x4b, 0x03, 0x04
-	int			mem_size	// > 30
+int mtkit_file_header_zip (		// Is this a .zip file header?
+	unsigned char	const	* mem,	// 0x50, 0x4b, 0x03, 0x04
+	int			mem_size// > 30
 	);
 	// 0 = No
 	// 1 = Yes
+
+int mtkit_file_lock (			// Open/create file & set lock
+	char	const *	filename,
+	int	*	file_id
+	);
+
+void mtkit_file_unlock (		// Release lock, close file
+	int	*	file_id
+	);
 
 int mtkit_snip_filename (
 	char	const	* txt,
@@ -1275,6 +1284,7 @@ class ByteFileWrite;
 class CliItem;
 class CliTab;
 class Exit;
+class FileLock;
 class Prefs;
 class Random;
 class RecentFile;
@@ -1283,6 +1293,15 @@ namespace ByteCube {}
 namespace ChunkFile {}
 
 template <typename T> class unique_ptr;
+
+typedef struct CharInt		CharInt;
+
+typedef int (* CliFunc) (
+	char const * const * args	// NULL terminated argument list
+	);
+	// 0 = Success
+	// 1 = Fail (CliTab::parse reports error)
+	// 2 = Fail (this function reports error)
 
 
 
@@ -1300,17 +1319,6 @@ public:
 private:
 	T * m_ptr;
 };
-
-
-
-typedef struct CharInt		CharInt;
-
-typedef int (* CliFunc) (
-	char const * const * args	// NULL terminated argument list
-	);
-	// 0 = Success
-	// 1 = Fail (CliTab::parse reports error)
-	// 2 = Fail (this function reports error)
 
 
 
@@ -1610,7 +1618,7 @@ private:
 
 
 
-}		// namespace ChunkFile
+}	// namespace ChunkFile
 
 
 
@@ -1821,6 +1829,22 @@ public:
 
 protected:
 	uint64_t	m_seed;
+};
+
+
+
+class FileLock
+{
+public:
+	FileLock ();
+	~FileLock ();
+
+	int set ( std::string const &filename );
+	void unset ();
+
+private:
+	int		m_id;
+	std::string	m_filename;
 };
 
 

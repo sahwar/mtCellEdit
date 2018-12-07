@@ -201,6 +201,42 @@ void mtKit::Random::get_data (
 	}
 }
 
+mtKit::FileLock::FileLock ()
+	:
+	m_id		( -1 )
+{
+}
+
+mtKit::FileLock::~FileLock ()
+{
+	unset ();
+}
+
+int mtKit::FileLock::set ( std::string const &filename )
+{
+	unset ();
+
+	if ( mtkit_file_lock ( filename.c_str (), &m_id ) )
+	{
+		std::cerr << "Unable to lock file '" << filename << "'\n";
+		return 1;
+	}
+
+	m_filename = filename;
+
+	return 0;
+}
+
+void mtKit::FileLock::unset ()
+{
+	if ( -1 != m_id )
+	{
+		mtkit_file_unlock ( &m_id );
+		remove ( m_filename.c_str () );
+		m_filename = "";
+	}
+}
+
 
 
 #include <vector>

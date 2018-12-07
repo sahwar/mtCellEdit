@@ -41,6 +41,12 @@ mtDW::SodaOp::SodaOp ( char const * const path )
 	m_mode		( 0 )
 {
 	std::string const real_path = mtDW::prepare_path ( path );
+	std::string const lock_filename = real_path + "soda.lock";
+
+	if ( m_lock.set ( lock_filename ) )
+	{
+		throw 123;
+	}
 
 	if (	m_db.open ( real_path + DB_FILENAME )
 		||

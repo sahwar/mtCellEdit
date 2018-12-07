@@ -44,6 +44,12 @@ mtDW::WellOp::WellOp ( char const * const path )
 	m_prng_buffer	( BUFFER_SIZE )
 {
 	std::string const real_path = mtDW::prepare_path ( path );
+	std::string const lock_filename = real_path + "well.lock";
+
+	if ( m_lock.set ( lock_filename ) )
+	{
+		throw 123;
+	}
 
 	if ( m_file_db.open ( real_path + DB_FILENAME ) )
 	{

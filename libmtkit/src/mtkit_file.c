@@ -1032,3 +1032,36 @@ char * mtkit_set_filename_extension (
 	return mtkit_string_join ( filename, ".", ext_a, NULL );
 }
 
+int mtkit_file_lock (
+	char	const * const	filename,
+	int		* const	file_id
+	)
+{
+	*file_id = open ( filename, O_CREAT | O_RDWR, 0666 );
+
+	if ( -1 == *file_id )
+	{
+		return 1;		// Failed to open lock file
+	}
+
+	if ( -1 == lockf ( *file_id, F_TLOCK, 0 ) )
+	{
+		mtkit_file_unlock ( file_id );
+
+		return 1;		// Failed to lock the file
+	}
+
+	return 0;			// Success
+}
+
+void mtkit_file_unlock (
+	int	* const	file_id
+	)
+{
+	if ( -1 != *file_id )
+	{
+		close ( *file_id );
+		*file_id = -1;
+	}
+}
+

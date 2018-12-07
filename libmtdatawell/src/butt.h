@@ -68,6 +68,8 @@ private:
 
 /// ----------------------------------------------------------------------------
 
+	mtKit::FileLock		m_lock;
+
 	int			m_write_next;
 	int			m_otp_bucket;
 	int			m_otp_position;

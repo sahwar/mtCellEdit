@@ -84,6 +84,8 @@ private:
 
 /// ----------------------------------------------------------------------------
 
+	mtKit::FileLock		m_lock;
+
 	int			m_mode;
 
 	mtKit::Sqlite		m_db;
